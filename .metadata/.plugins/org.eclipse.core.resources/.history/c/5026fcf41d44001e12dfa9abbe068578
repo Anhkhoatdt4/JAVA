@@ -1,0 +1,10 @@
+package datastructure;
+
+import bean.Item;
+
+public class Ex08Final{
+	int b = 40;
+	final Item itemZ= new Item(100,"Item Z",200);
+	itemZ.name ="Updated Item";
+	System.out.println(itemA);
+}

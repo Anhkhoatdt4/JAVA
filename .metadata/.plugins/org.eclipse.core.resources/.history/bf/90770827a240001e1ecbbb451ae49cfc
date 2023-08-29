@@ -1,0 +1,18 @@
+import entity.KhoaNgu;
+
+public class DEMO {
+	public static void main(String[] args) {
+		System.out.println("khoa ngu");
+		
+		KhoaNgu khoa1 = new KhoaNgu(12);
+		KhoaNgu khoa2 = new KhoaNgu(13);
+		
+		String str = new String();
+		Integer number = new Integer(12)''
+		System.out.println(khoa1);
+		System.out.println(khoa2);
+		
+		
+	
+	}
+}

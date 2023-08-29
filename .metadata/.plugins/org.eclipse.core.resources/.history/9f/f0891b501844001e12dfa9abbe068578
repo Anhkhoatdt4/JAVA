@@ -1,0 +1,15 @@
+package datastructure;
+
+import bean.Item;
+
+public class Ex07ObjectTypetest {
+	public static void main(String[] args) {
+		Item itemX =  new Item(01, "Item X",200);
+		
+	}
+	private static void modify(Item item) {
+		item.price = 888;
+		item = new Item(202,"Item Y", 555);
+		item.price = 999;
+	}
+}

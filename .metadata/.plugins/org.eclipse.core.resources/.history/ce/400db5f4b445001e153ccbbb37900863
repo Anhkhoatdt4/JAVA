@@ -1,0 +1,6 @@
+package bean;
+
+public class CustomInteger {
+	public int value;
+	public CustomInteger()
+}

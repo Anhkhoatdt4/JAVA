@@ -1,0 +1,9 @@
+package datastructure;
+
+import bean.CustomInteger;
+
+public class Ex12SwapSolution {
+	CustomInteger nA = new CustomInteger(22);
+	CustomInteger nB = new CustomInteger(66);
+	
+}

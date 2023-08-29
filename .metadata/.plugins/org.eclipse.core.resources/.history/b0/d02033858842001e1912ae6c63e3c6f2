@@ -1,0 +1,16 @@
+package view;
+
+import java.time.LocalDate;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		int number = 10;
+		System.out.println(number);
+		System.out.println("Time : " + LocalDate.now());
+		name();
+	}
+	private static void name() {
+		System.out.println("afs");
+	}
+}

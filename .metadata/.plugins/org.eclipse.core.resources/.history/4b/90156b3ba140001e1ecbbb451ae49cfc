@@ -1,0 +1,13 @@
+
+public class KhoaNgu {
+	int iq;
+	
+	public KhoaNgu() {
+	}
+	
+	public KhoaNgu(int iq) {
+		this.iq = iq;
+	}
+	
+	+-
+}

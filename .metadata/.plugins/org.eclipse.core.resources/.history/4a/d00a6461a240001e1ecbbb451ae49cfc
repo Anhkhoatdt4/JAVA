@@ -1,0 +1,22 @@
+package entity;
+
+public class KhoaNgu {
+	int iq;
+	
+	public KhoaNgu() {
+	}
+	
+	public KhoaNgu(int iq) {
+		this.iq = iq;
+	}
+
+	public checkIq() {
+		
+	}
+	@Override
+	public String toString() {
+		super.toString();
+		return "KhoaNgu [iq=" + iq + "]";
+	}
+	
+}

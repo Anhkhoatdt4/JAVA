@@ -1,0 +1,10 @@
+package datastructure;
+
+import bean.Item;
+
+public class Ex06ObjectDeclaration {
+	public static void main(String[] args) {
+		int number = 10;
+		Item itemA = new Item();
+	}
+}

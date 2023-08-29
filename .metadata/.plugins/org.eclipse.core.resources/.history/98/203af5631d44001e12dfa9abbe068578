@@ -1,0 +1,10 @@
+package datastructure;
+
+public class Ex08Final {
+	final int a = 20 ; 
+	int b = 40;
+	private void sysout() {
+		// TODO Auto-generated method stub
+
+	}
+}

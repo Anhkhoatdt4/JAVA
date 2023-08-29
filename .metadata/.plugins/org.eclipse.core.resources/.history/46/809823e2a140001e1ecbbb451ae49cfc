@@ -1,0 +1,18 @@
+
+public class KhoaNgu {
+	int iq;
+	
+	public KhoaNgu() {
+	}
+	
+	public KhoaNgu(int iq) {
+		this.iq = iq;
+	}
+
+	@Override
+	public String toString() {
+		super.toString();
+		return "KhoaNgu [iq=" + iq + "]";
+	}
+	
+}
