@@ -6,4 +6,5 @@
     <fullyQualifiedTypeName name="java.lang.System.Logger"/>
     <fullyQualifiedTypeName name="bean.Item"/>
     <fullyQualifiedTypeName name="bean.CustomInteger"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>
