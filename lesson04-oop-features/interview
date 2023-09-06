@@ -1,0 +1,22 @@
+1. Tính đóng gói là gì . áp dụng ở đâu trong code ? 
+--> Tính đóng gói được thể hiện qua các access modifier . 
++ Private : class ;
++ Public : Anywhere ; 
++ Default & Protected : Package ; 
+
+--> public : Tạo ra các hàm ulilities sử dụng ở bất kì nơi nào
+00> default : clearUI -> sử dụng trong package view (code giao diện)
+
+2. Tính đa hình 
++ Phương thức : 1 pthuc nhưng có nhiều thể hiện , chức năng 
+-> Overload : Hai hoặc nhiều phthuc gọi là overloading nếu :
++ Cung 1 class 
++ Trùng tên 
++ Khác nhau số lượng tham số || Kiểu dữ liệu truyền vào của tham số 
+
+-> Overide : Hai hoặc nhiều phương thức gọi là overriding nếu 
+	+ Thuộc 2 hoặc nhiều class có quan hệ thừa kế 
+	+ Override để định nghĩa lại nội dung class con 
+	+ Ví dụ : tostring 
+	
+	instanceof hoặc .getClass() để coi kiểu đối tượng. 

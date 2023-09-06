@@ -1,7 +1,0 @@
-package datastructure;
-
-public class Ex08Final{
-	final int a = 20 ; 
-	int b = 40;
-	System.out.println(a);
-}
