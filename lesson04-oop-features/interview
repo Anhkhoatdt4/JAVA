@@ -20,3 +20,22 @@
 	+ Ví dụ : tostring 
 	
 	instanceof hoặc .getClass() để coi kiểu đối tượng. 
+
+	
++ Đối tượng : 1 đối tượng nhưng có nhiều thể hiện 
+-> Ví dụ : Person --> Student , Employee , Child
+-> Mục đích: Tạo ra 1 tập các đối tượng lưu chung 1 mảng , danh sách 
+     	   : Dễ dàng convert KDL trong phạm vi cha con 	
+     	   
+3. Kế thừa 
++ Mục đích : Tăng khả năng reuse code
+	KDL cha :  Class , Abstract Class , Interface
+	KDL con :  Class , Abstract Class , Interface
+	
+	Class extends Class , Abstract Class
+	Class implement Interface 
+	Abstract Class extends Abstract Class
+	Abstract Class implements Interface
+	
+	Interface extends Interface
+	     	   

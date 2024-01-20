@@ -1,0 +1,209 @@
+GIT =================================
+1. GIT là gì, dùng như thế nào?
+-> GIT là hệ thống dùng để quản lý phiên bản, cho phép người dùng có thể quản lý sự thay đổi mã nguồn trong dự án phát triển phần mềm.
+Các lệnh cơ bản của GIT như:
+git init   	-> khởi tạo kho chứa ở local repository
+git add    	-> thêm các file / thay đổi vào phiên bản để thực hiện commit
+git commit 	-> tạo ra phiên bản lưu trạng thái
+git branch / checkout -> tạo các nhánh và chuyển đổi nhánh
+git merge 	-> kết hợp thay đổi từ 1 nhánh vào nhánh khác
+git push / pull -> đồng bộ data với remote repository
+
+
+2. phân biệt giữa git fetch và git clone
+-> git fetch: đã liên kết remote trước đó, tải các thay đổi trên remote về máy, nhưng không thực hiện các thay đổi trên local. -> người dùng thực hiện merge/rebase để đồng bộ dữ liệu.
+-> git clone: sao chép toàn bộ remote repository
+
+3. Phân biệt fetch và pull
+tương tự câu 2, git fetch để lấy data về nhưng chưa đồng bộ
+git pull thì lấy data về và tự động merge data vào nhánh hiện tại (tương đương lệnh git fetch rồi git merge)
+
+4. Phân biệt pull và pull --rebase
+pull rebase sẽ lấy các commit mới nhất local bỏ lên trên cùng của các commit lấy được từ remote.
+
+5.
+
+
+Java Core =================================
+1. phân biệt JDK, JRE, JVM
+JDK: Java Development Kit: bộ công cụ hỗ trợ cho việc thực thi và phát triển ứng dụng java
+JRE: Java Runtime Environment - môi trường thực thi Java, chạy các ứng dụng đã được biên dịch -> JRE cho phép chạy các ứng dụng java
+JVM: java virtual machine - môi trường thực thi các mã bytecode java. Quản lý bộ nhớ, thu thập rác, luồng, ...
+JDK: Cung cấp các công cụ và thư viện cần thiết để phát triển ứng dụng Java.
+JRE: Cung cấp môi trường thực thi để chạy các ứng dụng Java.
+JVM: Là máy ảo thực thi mã bytecode của ứng dụng Java.
+
+
+2. Tại sao Java Write one run anywhere
+dựa trên JVM, các ứng dụng java đều đã được biên dịch thành mã bytecode và JVM chịu trách nhiệu thực thi các mã bytecode này ở bất cử máy nào
+
+3. Có bao nhiêu loại kiểu dữ liệu trong JAVA
+2 kiểu:
+ + kiểu nguyên thủy: các kiểu java định nghĩa như int, float, boolean, ... (8 kiểu tất cả)
+  + kiểu tham chiếu: các class Java cung cấp hoặc người dùng tạo ra: String, Object, ...
+
+
+4. lưu trữ khởi tạo của KDL Nguyên thủy và đối tượng
+nguyên thủy: lưu trữ trong stack, truy cập nhanh, thay đổi giá trị sẽ trỏ đến stack mới
+đối tượng: lưu trữ địa chỉ ở heap, trong heap sẽ trỏ đến các heap / stack khác để lưu trữ dữ liệu khác của đối tượng
+
+
+5. enum là gì, dùng khi nào
+enum dùng để biểu thị các hằng số có ý nghĩa đặc biệt
+được dùng khi cần phân chia các kiểu / phân loại theo một nghĩa nào đó mà ko cần giá trị cụ thể, như các tháng trong năm, để người dùng có thể dễ dàng đọc hiểu và sử dụng code
+
+
+6. mục đích khai báo final cho các biến trong java
+đảm bảo biến không thay đổi trong quá trình thực thi của chương trình.
+sử dụng để dễ hiểu code hơn như thay thế các giá trị magic numbers.
+
+
+7. những vị trí có thể đặt từ khóa final
+biến cục bộ
+thuộc tính của lớp
+final phương thức: function ko thể kế thừa
+final class: class ko thể kế thừa
+final tham số trong function: ko thể thay đổi giá trị của nó trong function
+
+8. Mục đích, ý nghĩa của từ khóa static
+Static để tạo ra các biến, hàm phụ thuộc vào class chứ ko phụ thuộc vào đối tượng được tạo ra từ class đó
+ý nghĩa: giúp quản lý tài nguyên tốt hơn, có thể dùng chung giá trị cho các đối tượng khác nhau.
+
+9. có thể khai báo private constructor được ko? vì sao?	
+được, ta có thể chỉ định private constructor cho class. ví dụ như là trong singleton partten thì chỉ sử dụng instance nên việc public constructor là ko cần thiết. hoặc các class utils chỉ phục vụ các hàm hỗ trợ static cũng ko cần thiết phải public constructor để tạo ra đối tượng.
+
+
+10. phân biệt class và object
+class là mẫu để tạo ra các đối tượng, chứa đựng các thuộc tính hoặc phương thức để khi đối tượng được tạo ra sẽ có các khuôn mẫu đó. Còn object là thwujc thể cụ thể được tạo ra từ class, mang dữ liệu và có thể thực hiện các function định nghĩa.
+
+
+11. tại sao phải khai báo các  biến là private và truy cập thông qua getter setter
+
+đảm báo tính bảo mật, đóng gói dữ liệu. 
+dùng getter setter có thể kiểm soát ai có thể truy cập vào các giá trị của đối tượng bằng việc thêm code kiểm tra trong đó.
+
+12. có thể truy cập các thuộc tính, phương thức private từ ngoài class được ko? ví dụ?
+
+không thể, các thuộc tính hay phương thức private chỉ có thể được sử dụng bên trong class.
+
+13. phân biệt constructor và setter
+constructor là phương thức đặt biệt trong một lớp, được gọi khi khởi tạo 1 đối tượng. Nhiệm vụ là tạo ra các thuộc tính và đặt giá trị ban đầu cho chúng. nó có tên giống với class.
+setter là phương thức dùng để thay đổi / thiết lập giá trị cho thuộc tính của đối tượng. hàm setter ko cần phải có 1 quy tắc bắt buộc  về tên nhưng thường theo cấu trúc "set" + "tên biến". Thường được dùng để cập nhật giá trị , kiểm soát quá trình cập nhật đó, và thực hiện các hành động bổ sung.
+
+14. phân biệt this và super
+this đại diện cho chính đối tượng đang được để cập.
+super chỉ cha của đối tượng đó.
+
+
+15. Những tính chất cảu hướng đối tượng? cho ví dụ
++ tính đóng gói: cho phép che dấu thông tin đối tượng và chỉ lộ ra những thông tin công cộng
++ tính đa hình: dùng chung 1 tên phương thức nhưng thực hiện khác nhau đối với các đối tượng khác nhau (như kiểu khởi tạo animal thành dog và cat thì cùng 1 thuộc tính bark() nó sẽ thực hiện khác nhau)
++ tính kế thừa: cho phép kế thừa từ các thuộc tính phương thức từ một lớp khác, giúp tái sử dụng code.
++ tính trừu tượng: tập trung khái quát đối tượng và che giấu các chi tiết phức tạp của nó. (như là các lớp abstract trong java, chỉ có thuộc tính, phương thức nhưng ko cần nội dung) -> nhằm mô hình hóa thế giới thực vào đối tượng.
+
+16. phân biệt abstract class và interface
+abstract : lớp trừu tượng gồm các phương thức trừu tượng và phương thức đã định nghĩa, có thể chứa các thuộc tính, constructor. Lớp con chỉ có thể extends từ 1 lớp trừu tượng. Lớp trừu tượng không thể khởi tạo trực tiếp.
+interface: lớp trừu tượng chỉ gồm các hằng số, các phương thức ko định nghĩa. Ko có thuộc tính. Lớp con có thể implements từ nhiều interface cùng lúc. Chỉ chứa các khai báo phương thức, ko chứa mã thực thi.
+
+17. giải thích functional interface
+là 1 interface chỉ chứa 1 phương thức trừu tượng. phương thức đó ko được định nghĩa. Thường dùng trong các lambda expresstion. 
+
+18. tính chất đa hình, phương thức đối tượng
+
+19. có mấy loại exception
+có 2 loại exception chính:
+checked exception: những exception bắt buộc kiểm tra vì đoạn code có khả năng xảy ra lỗi (ioexception, filexecption..)
+unchecked exception: những exception ko bắt buộc kiểm tra, vì nó có thể xảy ra trong quá trình runtime như nullpoiterexceltion, outofrangeexception,... 
+Ngoài ra còn có Error exception ít dùng vì có những lỗi như outofmemoryerror. Hoặc tự tạo exception ra bằng việc kế thừa lớp exception. n
+
+20. phân biệt compile exception và runtimeexception
+
+21. cách xử lý exception
+đặt khối lệnh có khả năng lỗi vào khối lệnh try catch, nếu có lỗi xảy ra trong try thì ta có thể thực hiện các đoạn code ở trong catch. Hoặc có thể dùng throws để ném lỗi đến bậc cao hơn.
+
+22. phân biệt final và finally
+final: thuognf dùng để khai báo các thuộc tính, lớp, phương thức.
+finally: thường dùng trong các khối lệnh như switch-case-finally hoặc try-catch-finally để sử lý trong một số trường hợp như gặp exception vẫn có thể thực thi.
+
+23. phân biệt string literal và string object
+string literal: khai báo chuỗi bằng cặp dấu " " -> các chuỗi đó được lưu trữ trong string pool, nhiều biến khác nhau cùng giá trị được trỏ đến cùng 1 ô nhớ trong string pool
+string object: thực hiện bằng việc khởi tạo new -> tạo ra ô nhớ riêng biệt.
+
+
+24. Phân biệt String builder và String buffer
+String builder : không cung cấp việc đồng bộ hóa, chạy nhanh hơn trong đơn luồng nhưng ko đảm bảo trong đa luồng.
+string buffer : cung cấp đồng bộ hóa, chạy chậm hơn nhưng đảm bảo việc đồng bộ dữ liệu trong quá trình chạy cả đơn luồng và đa luồng.
+
+25. khái niệm immutable và mutable
+immutable : sau khi được khởi tạo giá trị sẽ không thay đổi được, việc gán giá trị mới thực chất là việc tạo ra ô nhớ mới với giá trị mới
+mutable: giá trị trong biến có thể thay đổi được mà không cần tạo mới
+
+26. đặc điểm của cấu trúc dữ liệu array - fixed length
+array có độ dài cố định: mảng có độ dài cố định sau khi khởi tạo
+truy cập phần tử thông qua index, bắt đầu từ 0
+các phần tử trong mảng có cùng kiểu dữ liệu
+dữ liệu lưu trữ liên tiếp
+dễ xảy ra lỗi tràn mảng
+
+27 . phân biệt stack queue và dequeue
+stack : lưu trữ dữ liệu theo kiểu first in last out
+queue: lưu trữ dữ liệu kiểu first in first out
+dequeue: hỗ trợ xử lý dữ liệu ở cả 2 đầu
+
+28. phân biệt array, arraylist và linkedlist
+array: mảng nhưng có độ dài cố định
+arraylist: mảng nhưng có thể thêm xóa phần tử, kích thước mảng thay đổi
+linkedliest: là mảng dựa trên danh sách liên kết, thuận tiện cho việc thêm xóa nhanh ở đầu or cuối mảng.
+
+29. khi nào nên khởi tạo capacity
+khi ta đã biết được số lượng trong mảng và không cần sự thay đổi kích thước thì có thể khởi tạo capacity, hoặc trong điều kiện bộ nhớ ít, khởi tạo trước để phòng trường hợp ko có bộ nhớ dư thừa để cấp phát.
+
+30. so sánh tốc độ sử lý thêm sửa xóa của arraylist và linkedlist
+thêm : thêm cuối tốc độ ngang nhau, đầu or giữa thì arraylist chậm hơn do phải dịch chuyển, còn linkedlist chỉ cần chỉnh lại liên kết.
+sửa : arraylist nhanh hơn vì duyệt index, còn linkedlist thì chậm hơn do duyệt qua từng nút liên kết.
+xóa: linkedlist thường nhanh hơn vì nó chỉ cần chỉnh sửa lại các node liên kết, trong khi arraylist phải thực hiện việc dịch chuyển các phần tử.
+
+31. cấu trúc dữ liệu set dùng để làm gì
+set là tập hợp các phần tử như array nhưng không có phần tử trùng lặp. set không quan tâm đến thứ tự phần tử.
+
+
+32. vì sao các đối tượng trong set không trùng nhau
+vì các đối tượng thực hiện so sánh với nhau thông qua các hàm như hashcode, equal của nó.
+trong cấu trúc của set sử dụng map để lưu trữ các value của nó tại key, nên nó không trùng nhau.
+
+33. phân biệt hashset, linkedhashset, treeset
+hashset: triển khai của set, không có thứ tự 
+linkedhashset: cũng là triển khai của set, như hashset nhưng có thứ tự
+treeset: dùng cây nhị phân để lưu trữ, vẫn giữ được thứ tự danh sách, duyệt tìm theo độ phức tạp log(n).
+
+34. phân biệt, cách sử dụng comparable và comparator
+comparable là một interface cho phép class đó tự định nghĩa được cách thức so sánh với nhau thông qua override lại hàm compareTo(). (phải implements)
+comparator cho phép triển khai cách thức so sánh của các đối tượng. Định nghĩa hàm compare(). Thường dùng để so sánh theo nhiều tiêu chí của đối tượng. (thenComparing)
+
+35. Cấu trúc dữ liệu Map để làm gì
+map dùng để lưu trữ dữ liệu theo các cặp giá trị key value -> thay vì sử dụng index, để có thể truy cập phù hợp với từng kiểu dữ liệu cần thiết.
+tra cứu nhanh hơn theo key, ko phụ thuộc vào index.
+đánh dấu chỉ mục cho dữ liệu.
+
+36. Phân biệt hashmap, linkedhashmap, treemap
+hashmap: không có thứ tự của key value
+linkedhashmap : duy trì thứ tự phần tử khi được thêm vào
+treemap: duy trì theo thứ tự tăng dần giảm dần của danh sách.
+
+37. Stream là gì. mục đích của stream
+là cơ chế mạnh mẽ để xử lý các tập hợp dữ liệu. Nó sử lý cho ta việc vòng lặp và điều kiện, người dùng chỉ cần tập trung vào xử lý dữ liệu. Cung cấp các hàm và các cách thức xử lý nhanh chóng cho người dùng. 
+
+38. vì sao xử lý xong thường trả về kiểu dữ liệu khác chứ không lưu trong stream
+tránh ảnh hưởng đến dữ liệu gốc.
+
+39. phân biệt imtermediate operator và terminal operator
+cả 2 đều là toán tử trong stream
+imtermediate: các phép toán xử lý trả về stream, nó sẽ không được chạy nếu ko có phép toán terminal
+terminal: pháp toán xử lý trả về giá trị khác stream (void, int, ...). kết thúc luồng xử lý của stream.
+
+40. functional interface là gì
+FI là 1 interface nhưng chỉ có duy nhất 1 hàm trừu tượng, thường được dùng trong các lambda expresstion.
+
+41. lambda expression là gì
+là 1 biến thuộc kiểu function, cho phép tạo nhanh gọn cho 1 hàm và có thể truyền vào các hàm khác để sử dụng.
+
